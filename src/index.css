@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #030208;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #e0e7ff;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.5), 0 0 40px rgba(34, 211, 238, 0.2);
+  }
+  .text-glow-magenta {
+    text-shadow: 0 0 20px rgba(232, 121, 249, 0.5), 0 0 40px rgba(232, 121, 249, 0.2);
+  }
+  .border-glow {
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.2), inset 0 0 15px rgba(34, 211, 238, 0.05);
+  }
+  .text-readable {
+    text-shadow: 0 1px 3px rgba(3, 2, 8, 0.95), 0 2px 8px rgba(3, 2, 8, 0.8);
+  }
+  .content-backdrop {
+    background: linear-gradient(135deg, rgba(3, 2, 8, 0.82) 0%, rgba(3, 2, 8, 0.65) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+canvas {
+  display: block;
+  touch-action: none;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes float-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float-in {
+  animation: float-in 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out forwards;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
